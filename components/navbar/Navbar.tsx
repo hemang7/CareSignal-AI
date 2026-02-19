@@ -18,18 +18,17 @@ export function Navbar() {
 
   return (
     <header
-      className="border-b border-border bg-card/80 backdrop-blur-sm sticky top-0 z-30"
+      className="border-b border-border bg-card/80 backdrop-blur-sm sticky top-0 z-40"
       style={{ paddingTop: "env(safe-area-inset-top)" }}
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 min-w-0 overflow-x-hidden">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 min-w-0">
         <div className="flex flex-wrap items-center justify-between h-12 sm:h-14 lg:h-16 gap-2 sm:gap-3">
           {/* Logo */}
           <Link
             href="/"
             className="text-sm sm:text-lg lg:text-xl font-semibold text-foreground hover:text-primary transition-colors shrink-0 min-w-0 truncate"
           >
-            <span className="md:hidden">CareSignal</span>
-            <span className="hidden md:inline">CareSignal AI</span>
+            CareSignal <span className="text-primary">AI</span>
           </Link>
 
           {/* Desktop (>=1024px): Full nav inline */}

@@ -6,3 +6,4 @@ export { Providers } from "./Providers";
 export { VoiceRecorder } from "./VoiceRecorder";
 export { Button } from "./ui/Button";
 export { Card } from "./ui/Card";
+export { Portal } from "./ui/Portal";
