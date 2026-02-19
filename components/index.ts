@@ -1,4 +1,5 @@
 export { Header } from "./Header";
+export { PatientContextBar } from "./PatientContextBar";
 export { PatientSafetyBanner } from "./PatientSafetyBanner";
 export { PageContainer } from "./PageContainer";
 export { PatientPicker } from "./PatientPicker";

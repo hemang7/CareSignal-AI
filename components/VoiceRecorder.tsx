@@ -228,7 +228,7 @@ export function VoiceRecorder({
       <div className="flex flex-col items-center gap-6">
         <div
           className={cn(
-            "w-32 h-32 sm:w-40 sm:h-40 rounded-full flex items-center justify-center transition-all duration-300",
+            "w-36 h-36 sm:w-44 sm:h-44 rounded-full flex items-center justify-center transition-all duration-300",
             isRecording && "bg-primary-muted scale-105 animate-pulse",
             isProcessing && "bg-muted-bg",
             isRecorded && "bg-success/10",
@@ -239,38 +239,38 @@ export function VoiceRecorder({
             <button
               onClick={startRecording}
               disabled={isSupported === null}
-              className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-primary hover:bg-primary-hover flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-primary hover:bg-primary-hover flex items-center justify-center transition-all duration-150 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Start recording"
             >
-              <MicrophoneIcon className="w-10 h-10 text-white" />
+              <MicrophoneIcon className="w-12 h-12 sm:w-14 sm:h-14 text-white" />
             </button>
           )}
 
           {isRecording && (
             <button
               onClick={stopRecording}
-              className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-primary hover:bg-primary-hover flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-primary hover:bg-primary-hover flex items-center justify-center transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               aria-label="Stop recording"
             >
-              <StopIcon className="w-8 h-8 text-white" />
+              <StopIcon className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
             </button>
           )}
 
           {isProcessing && (
             <div
-              className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-muted flex items-center justify-center"
+              className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-muted flex items-center justify-center"
               aria-label="Processing"
             >
-              <ProcessingSpinner className="w-10 h-10 text-primary" />
+              <ProcessingSpinner className="w-12 h-12 sm:w-14 sm:h-14 text-primary" />
             </div>
           )}
 
           {isRecorded && (
             <div
-              className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-success flex items-center justify-center"
+              className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-success flex items-center justify-center"
               aria-hidden
             >
-              <CheckIcon className="w-10 h-10 text-white" />
+              <CheckIcon className="w-12 h-12 sm:w-14 sm:h-14 text-white" />
             </div>
           )}
         </div>
@@ -285,9 +285,9 @@ export function VoiceRecorder({
           </p>
           <p className="text-sm text-muted">
             {isIdle && "Tap to start recording"}
-            {isRecording && "Recording... Tap to stop"}
-            {isProcessing && "Processing..."}
-            {isRecorded && "Recording complete"}
+            {isRecording && "Listening… capturing details"}
+            {isProcessing && "Processing…"}
+            {isRecorded && "Recording captured"}
           </p>
         </div>
       </div>

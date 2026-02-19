@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { PatientPicker } from "../PatientPicker";
 import { NavLinks } from "./NavLinks";
 import { MobileMenuPortal } from "./MobileMenuPortal";
 
@@ -32,30 +31,21 @@ export function Navbar() {
           </Link>
 
           {/* Desktop (>=1024px): Full nav inline */}
-          <div className="hidden lg:flex items-center gap-3 xl:gap-4 min-w-0 shrink">
-            <div className="shrink-0 overflow-visible">
-              <PatientPicker />
-            </div>
+          <div className="hidden lg:flex items-center gap-1 xl:gap-2 min-w-0 shrink">
             <nav className="flex items-center gap-1 xl:gap-2 min-w-0" aria-label="Main navigation">
               <NavLinks variant="inline" />
             </nav>
           </div>
 
           {/* Tablet (768-1023px): Tighter nav */}
-          <div className="hidden md:flex lg:hidden items-center gap-2 min-w-0 shrink">
-            <div className="shrink-0 overflow-visible">
-              <PatientPicker />
-            </div>
+          <div className="hidden md:flex lg:hidden items-center gap-1 min-w-0 shrink">
             <nav className="flex items-center gap-1 min-w-0" aria-label="Main navigation">
               <NavLinks variant="inline" />
             </nav>
           </div>
 
-          {/* Mobile (<768px): PatientPicker + hamburger */}
-          <div className="flex md:hidden items-center gap-1.5 min-w-0 flex-1 justify-end">
-            <div className="min-w-0 max-w-[140px] overflow-visible">
-              <PatientPicker />
-            </div>
+          {/* Mobile (<768px): Hamburger only */}
+          <div className="flex md:hidden items-center min-w-0 flex-1 justify-end">
             <button
               ref={hamburgerRef}
               type="button"

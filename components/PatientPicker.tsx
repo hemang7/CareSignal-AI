@@ -7,7 +7,14 @@ import { cn } from "@/lib/utils";
 
 const MODAL_Z = 10060;
 
-export function PatientPicker() {
+interface PatientPickerProps {
+  /** When provided, overrides the default trigger label (e.g. "Switch patient") */
+  triggerLabel?: string;
+  /** Use larger, more prominent trigger styling (e.g. for context bar) */
+  variant?: "default" | "contextBar";
+}
+
+export function PatientPicker({ triggerLabel, variant = "default" }: PatientPickerProps) {
   const { patients, activePatient, setActivePatient, addPatient } =
     usePatientStore();
   const [open, setOpen] = useState(false);
@@ -86,7 +93,7 @@ export function PatientPicker() {
 
   return (
     <>
-      <div className="relative max-w-[140px] sm:max-w-none">
+      <div className={cn("relative", variant === "contextBar" ? "w-full sm:w-auto" : "max-w-[140px] sm:max-w-none")}>
         <button
           ref={triggerRef}
           onClick={(e) => {
@@ -94,15 +101,24 @@ export function PatientPicker() {
             setOpen(!open);
           }}
           className={cn(
-            "flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-sm font-medium min-h-[44px] sm:min-h-0",
-            "border border-border bg-card hover:bg-muted-bg transition-colors",
-            "text-foreground min-w-0 max-w-full"
+            "flex items-center gap-2 rounded-lg text-sm font-medium transition-colors",
+            "border border-border bg-card hover:bg-muted-bg",
+            "text-foreground min-w-0 max-w-full",
+            variant === "contextBar"
+              ? "px-4 py-2.5 min-h-[44px] w-full sm:w-auto justify-center"
+              : "px-2 sm:px-3 py-1.5 sm:py-2 min-h-[44px] sm:min-h-0"
           )}
         >
-          <span className="text-muted shrink-0 hidden sm:inline">Patient:</span>
-          <span className="truncate">
-            {activePatient ? `${activePatient.name} (${activePatient.age})` : "Select"}
-          </span>
+          {triggerLabel ? (
+            <span className="truncate">{triggerLabel}</span>
+          ) : (
+            <>
+              <span className="text-muted shrink-0 hidden sm:inline">Patient:</span>
+              <span className="truncate">
+                {activePatient ? `${activePatient.name} (${activePatient.age})` : "Select"}
+              </span>
+            </>
+          )}
           <svg
             className={cn("w-4 h-4 transition-transform", open && "rotate-180")}
             fill="none"
