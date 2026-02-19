@@ -38,9 +38,9 @@ export function Button({
   };
 
   const sizes = {
-    sm: "h-9 px-3 sm:px-4 text-sm",
-    md: "h-11 px-4 sm:px-6 text-sm",
-    lg: "h-11 sm:h-12 px-6 sm:px-8 text-sm sm:text-base",
+    sm: "min-h-[44px] h-9 px-3 sm:px-4 text-sm",
+    md: "min-h-[44px] h-11 px-4 sm:px-6 text-sm",
+    lg: "min-h-[44px] h-11 sm:h-12 px-6 sm:px-8 text-sm sm:text-base",
   };
 
   const classes = cn(base, variants[variant], sizes[size], className);

@@ -97,11 +97,11 @@ export default function DashboardPage() {
     return (
       <PageContainer>
         <div className="space-y-6 sm:space-y-8">
-          <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
-              Today&apos;s Visit
-            </h1>
-            <p className="text-muted mt-1">{today}</p>
+        <div>
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
+            Today&apos;s Visit
+          </h1>
+          <p className="text-xs sm:text-sm text-muted mt-1">{today}</p>
           </div>
           <Card className="text-center py-16">
             <p className="text-muted mb-4">
@@ -119,10 +119,10 @@ export default function DashboardPage() {
       <div className="space-y-6 sm:space-y-8">
         {/* Patient header + microcopy */}
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground break-words">
             {activePatient.name}
           </h1>
-          <p className="text-muted mt-1">{today}</p>
+          <p className="text-xs sm:text-sm text-muted mt-1">{today}</p>
           <p className="text-sm text-muted mt-2 italic">
             Supporting safer care through structured visit intelligence.
           </p>
@@ -202,7 +202,7 @@ export default function DashboardPage() {
         )}
 
         {/* Smart Metrics Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 min-h-0">
           <Card className="flex flex-col gap-2">
             <span className="text-sm text-muted">Visits recorded</span>
             <span className="text-3xl font-bold text-primary">{analyses.length}</span>
@@ -325,7 +325,7 @@ export default function DashboardPage() {
 
         {analyses.length > 0 && (
           <Card>
-            <h2 className="text-lg font-semibold text-foreground mb-4">
+            <h2 className="text-base sm:text-lg font-semibold text-foreground mb-4">
               Recent visits
             </h2>
             <ul className="space-y-3">
@@ -333,12 +333,12 @@ export default function DashboardPage() {
                 <li key={i}>
                   <Link
                     href={`/insights?visit=${i}`}
-                    className="flex items-center justify-between gap-4 py-2 rounded-lg hover:bg-muted-bg/50 transition-colors group"
+                    className="flex flex-col sm:flex-row sm:justify-between gap-2 py-2 rounded-lg hover:bg-muted-bg/50 transition-colors group"
                   >
-                    <span className="text-foreground group-hover:text-primary transition-colors truncate">
+                    <span className="text-foreground group-hover:text-primary transition-colors line-clamp-1 min-w-0">
                       {deriveAISummaryShort(a)}
                     </span>
-                    <span className="text-sm text-muted shrink-0">
+                    <span className="text-xs text-muted shrink-0">
                       {formatVisitDate(a.timestamp)}
                     </span>
                   </Link>
@@ -348,7 +348,8 @@ export default function DashboardPage() {
           </Card>
         )}
 
-        <div className="flex flex-col sm:flex-row gap-4">
+        {/* Desktop CTAs */}
+        <div className="hidden sm:flex flex-col sm:flex-row gap-4">
           <Button href="/record" size="lg" className="flex-1 sm:flex-initial">
             Record Visit Notes
           </Button>
@@ -356,6 +357,21 @@ export default function DashboardPage() {
             View Insights
           </Button>
         </div>
+
+        {/* Mobile sticky CTAs */}
+        <div className="fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur border-t border-border p-3 sm:hidden z-40 safe-mobile">
+          <div className="flex gap-2 max-w-6xl mx-auto px-4">
+            <Button href="/record" size="lg" className="flex-1 min-h-[44px]">
+              Record Visit Notes
+            </Button>
+            <Button href="/insights" variant="outline" size="lg" className="flex-1 min-h-[44px]">
+              View Insights
+            </Button>
+          </div>
+        </div>
+
+        {/* Spacer for mobile sticky footer */}
+        <div className="h-20 sm:h-0" aria-hidden />
       </div>
     </PageContainer>
   );

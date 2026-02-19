@@ -60,6 +60,11 @@
 }
 
 @layer utilities {
+  .safe-mobile {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
   .text-balance {
     text-wrap: balance;
   }

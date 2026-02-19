@@ -42,7 +42,7 @@ export function NavLink({
   );
 
   const drawerClasses = cn(
-    "block w-full text-left text-base px-4 py-3",
+    "block w-full text-left text-base px-4 py-3 min-h-[44px] flex items-center",
     isActive
       ? "text-primary bg-primary-muted/30"
       : "text-foreground hover:bg-muted-bg"

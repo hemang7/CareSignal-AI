@@ -21,8 +21,8 @@ export function Navbar() {
       className="border-b border-border bg-card/80 backdrop-blur-sm sticky top-0 z-30"
       style={{ paddingTop: "env(safe-area-inset-top)" }}
     >
-      <div className="mx-auto max-w-6xl px-3 sm:px-6 lg:px-8 min-w-0">
-        <div className="flex items-center justify-between h-12 sm:h-14 lg:h-16 gap-2 sm:gap-3">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 min-w-0 overflow-x-hidden">
+        <div className="flex flex-wrap items-center justify-between h-12 sm:h-14 lg:h-16 gap-2 sm:gap-3">
           {/* Logo */}
           <Link
             href="/"

@@ -127,12 +127,12 @@ function RiskFlagCard({
     : null;
 
   return (
-    <Card className="py-4">
-      <div className="flex flex-wrap items-center gap-2 mb-1.5">
-        <span className="text-lg" aria-hidden>{styles.icon}</span>
-        <span className="font-bold text-foreground">{flag.risk}</span>
+    <Card>
+      <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-2 mb-1.5">
+        <span className="text-lg shrink-0" aria-hidden>{styles.icon}</span>
+        <span className="font-bold text-foreground break-words">{flag.risk}</span>
         <span
-          className={`text-xs font-bold px-2.5 py-1 rounded-md border ${styles.bg}`}
+          className={`text-xs font-bold px-2.5 py-1 rounded-md border shrink-0 ${styles.bg}`}
         >
           {flag.severity?.toLowerCase() === "medium" || flag.severity?.toLowerCase() === "moderate"
             ? "Moderate"
@@ -313,13 +313,13 @@ function InsightsContent() {
 
   return (
     <PageContainer>
-      <div className="space-y-6 sm:space-y-10">
+      <div className="space-y-6 sm:space-y-8">
         {/* Patient context */}
         <div className="pb-4 sm:pb-6 border-b border-border">
-          <h1 className="text-xl sm:text-2xl font-bold text-foreground break-words">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground break-words">
             {activePatient.name}
           </h1>
-          <p className="text-muted mt-0.5">Age {activePatient.age}</p>
+          <p className="text-xs sm:text-sm text-muted mt-0.5">Age {activePatient.age}</p>
           <p className="text-sm text-muted mt-2 italic">
             Supporting safer care through structured visit insights.
           </p>
@@ -597,7 +597,7 @@ function InsightsContent() {
         {/* Transcript (collapsible) */}
         <section className="pt-4 border-t border-border">
           <details className="group">
-            <summary className="cursor-pointer text-sm font-medium text-muted hover:text-foreground list-none flex items-center justify-between">
+            <summary className="cursor-pointer text-sm font-medium text-muted hover:text-foreground list-none flex items-center justify-between min-h-[44px]">
               <span>Visit transcript</span>
               <span className="text-xs">View / Copy</span>
             </summary>
@@ -611,9 +611,11 @@ function InsightsContent() {
                   Copy
                 </Button>
               </div>
-              <p className="text-sm text-muted leading-relaxed">
-                <TranscriptWithHighlights text={cleanedTranscript} />
-              </p>
+              <div className="max-h-[300px] overflow-y-auto">
+                <p className="text-sm text-muted leading-relaxed whitespace-pre-wrap break-words">
+                  <TranscriptWithHighlights text={cleanedTranscript} />
+                </p>
+              </div>
             </Card>
           </details>
         </section>
@@ -623,23 +625,23 @@ function InsightsContent() {
           <h2 className="text-xs uppercase tracking-wider text-muted font-medium mb-3">
             Export
           </h2>
-          <div className="flex flex-wrap gap-3 items-center">
-            <Button size="sm" variant="outline" onClick={handleExportSummary}>
+          <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
+            <Button size="sm" variant="outline" onClick={handleExportSummary} className="w-full sm:w-auto">
               Export Summary
             </Button>
-            <Button size="sm" variant="outline" onClick={handleCopyForEMR}>
+            <Button size="sm" variant="outline" onClick={handleCopyForEMR} className="w-full sm:w-auto">
               Copy for EMR
             </Button>
             {copied && (
-              <span className="text-xs text-success">Copied to clipboard</span>
+              <span className="text-xs text-success self-center">Copied to clipboard</span>
             )}
           </div>
         </section>
 
         {/* CTAs */}
-        <div className="flex flex-wrap gap-4 pt-4">
-          <Button href="/record">Record another visit</Button>
-          <Button href={`/patients/${activePatient.id}`} variant="outline">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
+          <Button href="/record" className="w-full sm:w-auto">Record another visit</Button>
+          <Button href={`/patients/${activePatient.id}`} variant="outline" className="w-full sm:w-auto">
             View care history
           </Button>
         </div>

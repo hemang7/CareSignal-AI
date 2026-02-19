@@ -101,10 +101,9 @@ export default function RecordPage() {
       <div className="max-w-xl mx-auto space-y-8 min-w-0 w-full">
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-2xl sm:text-3xl font-bold">Record Visit</h1>
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">Record Visit</h1>
           <p className="text-sm sm:text-base text-muted mt-1 px-2">
             Record voice notes or type/paste your visit transcript for analysis
-            analysis
           </p>
           {activePatient && (
             <p className="text-sm text-muted mt-2">

@@ -36,11 +36,14 @@ export function PatientPicker() {
   };
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className="relative max-w-[140px] sm:max-w-none" ref={dropdownRef}>
       <button
-        onClick={() => setOpen(!open)}
+        onClick={(e) => {
+          e.stopPropagation();
+          setOpen(!open);
+        }}
         className={cn(
-          "flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-sm font-medium",
+          "flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-sm font-medium min-h-[44px] sm:min-h-0",
           "border border-border bg-card hover:bg-muted-bg transition-colors",
           "text-foreground min-w-0 max-w-full"
         )}
@@ -58,7 +61,11 @@ export function PatientPicker() {
       </button>
 
       {open && (
-        <div className="absolute top-full left-0 mt-1 w-56 rounded-lg border border-border bg-card shadow-lg z-[100] py-1">
+        <div
+          role="presentation"
+          className="absolute top-full left-0 mt-1 w-56 rounded-lg border border-border bg-card shadow-lg z-[100] py-1"
+          onClick={(e) => e.stopPropagation()}
+        >
           {patients.map((p) => (
             <button
               key={p.id}
@@ -67,11 +74,11 @@ export function PatientPicker() {
                 setOpen(false);
               }}
               className={cn(
-                "w-full text-left px-4 py-2 text-sm hover:bg-muted-bg",
+                "w-full text-left px-4 py-2.5 min-h-[44px] flex items-center text-sm hover:bg-muted-bg",
                 activePatient?.id === p.id && "bg-primary-muted text-primary font-medium"
               )}
             >
-              {p.name} ({p.age})
+              <span className="truncate">{p.name} ({p.age})</span>
             </button>
           ))}
           <div className="border-t border-border mt-1 pt-1">
@@ -80,7 +87,7 @@ export function PatientPicker() {
                 setAddOpen(true);
                 setOpen(false);
               }}
-              className="w-full text-left px-4 py-2 text-sm text-primary hover:bg-muted-bg font-medium"
+              className="w-full text-left px-4 py-2.5 min-h-[44px] flex items-center text-sm text-primary hover:bg-muted-bg font-medium"
             >
               + Add Patient
             </button>
