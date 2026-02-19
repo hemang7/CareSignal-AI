@@ -163,12 +163,31 @@ export function MobileMenuPortal({
           paddingBottom: "env(safe-area-inset-bottom)",
         }}
       >
-        {/* Branding */}
-        <div className="px-5 py-6 border-b border-border shrink-0">
-          <p className="font-semibold text-foreground">CareSignal AI</p>
-          <p className="text-sm text-muted mt-0.5">
-            Smarter care insights in seconds.
-          </p>
+        {/* Header: branding + close button */}
+        <div className="flex items-start justify-between gap-4 px-5 py-6 border-b border-border shrink-0">
+          <div>
+            <p className="font-semibold text-foreground">CareSignal AI</p>
+            <p className="text-sm text-muted mt-0.5">
+              Smarter care insights in seconds.
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={handleClose}
+            className="shrink-0 p-2 rounded-lg text-white hover:bg-white/10 transition-colors -mt-1 -mr-1"
+            aria-label="Close menu"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              aria-hidden
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
 
         {/* Nav links */}

@@ -39,7 +39,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           <PatientContextBar />
-          <main className="min-h-screen min-w-0 pt-20 md:pt-24">{children}</main>
+          <main className="min-h-screen min-w-0 pt-4 md:pt-6">{children}</main>
         </Providers>
       </body>
     </html>
