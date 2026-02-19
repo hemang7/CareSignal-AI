@@ -1,4 +1,4 @@
-export { Header } from "./Header";
+export { Navbar } from "./navbar";
 export { PatientContextBar } from "./PatientContextBar";
 export { PatientSafetyBanner } from "./PatientSafetyBanner";
 export { PageContainer } from "./PageContainer";

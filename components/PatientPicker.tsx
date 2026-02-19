@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import { usePatientStore } from "@/lib/patient-store";
 import { cn } from "@/lib/utils";
 
-const MODAL_Z = 10060;
+const MODAL_Z = 300;
 
 interface PatientPickerProps {
   /** When provided, overrides the default trigger label (e.g. "Switch patient") */
@@ -143,7 +143,7 @@ export function PatientPicker({ triggerLabel, variant = "default" }: PatientPick
             ref={dropdownRef}
             role="listbox"
             className={cn(
-              "fixed z-[10050] rounded-lg border border-border bg-card shadow-xl py-1",
+              "fixed z-[200] rounded-lg border border-border bg-card shadow-xl py-1",
               "max-h-[min(70vh,400px)] overflow-y-auto"
             )}
             style={{

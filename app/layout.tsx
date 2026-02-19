@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Header, PatientContextBar, Providers } from "@/components";
+import { Navbar, PatientContextBar, Providers } from "@/components";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -37,9 +37,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} font-sans min-h-screen`}
       >
         <Providers>
-          <Header />
+          <Navbar />
           <PatientContextBar />
-          <main className="min-h-[calc(100vh-4rem)] overflow-x-hidden safe-mobile">{children}</main>
+          <main className="min-h-screen min-w-0 pt-20 md:pt-24">{children}</main>
         </Providers>
       </body>
     </html>
