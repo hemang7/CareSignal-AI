@@ -40,9 +40,9 @@ export function PatientPicker() {
       <button
         onClick={() => setOpen(!open)}
         className={cn(
-          "flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-2 rounded-lg text-sm font-medium",
+          "flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-sm font-medium",
           "border border-border bg-card hover:bg-muted-bg transition-colors",
-          "text-foreground min-w-0"
+          "text-foreground min-w-0 max-w-full"
         )}
       >
         <span className="text-muted shrink-0 hidden sm:inline">Patient:</span>

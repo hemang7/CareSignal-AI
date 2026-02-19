@@ -313,10 +313,10 @@ function InsightsContent() {
 
   return (
     <PageContainer>
-      <div className="space-y-10">
+      <div className="space-y-6 sm:space-y-10">
         {/* Patient context */}
-        <div className="pb-6 border-b border-border">
-          <h1 className="text-2xl font-bold text-foreground">
+        <div className="pb-4 sm:pb-6 border-b border-border">
+          <h1 className="text-xl sm:text-2xl font-bold text-foreground break-words">
             {activePatient.name}
           </h1>
           <p className="text-muted mt-0.5">Age {activePatient.age}</p>
@@ -326,8 +326,8 @@ function InsightsContent() {
           <div className="flex flex-col gap-2 mt-3 text-xs text-muted">
             <span>Visit analyzed: {formatVisitDate(latestAnalysis.timestamp)}</span>
             {analyses.length > 1 && (
-              <div className="flex flex-wrap gap-1.5 items-center">
-                <span className="text-muted">View:</span>
+              <div className="flex flex-wrap gap-1.5 items-center min-w-0">
+                <span className="text-muted shrink-0">View:</span>
                 {analyses.map((a, i) => (
                   <Link
                     key={i}

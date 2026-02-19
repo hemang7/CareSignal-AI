@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "AI Caregiver Co-Pilot",
+  title: "CareSignal AI",
   description:
     "Compassionate AI assistance for caregivers. Get support with care tasks, reminders, and guidance.",
 };
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

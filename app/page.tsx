@@ -6,8 +6,8 @@ export default function Home() {
       {/* Hero */}
       <section className="text-center space-y-8 mb-20">
         <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground tracking-tight px-2">
-          AI Caregiver{" "}
-          <span className="text-primary">Co-Pilot</span>
+          CareSignal{" "}
+          <span className="text-primary">AI</span>
         </h1>
         <p className="text-base sm:text-lg lg:text-xl text-muted max-w-2xl mx-auto px-1">
           Compassionate AI support for caregivers. Get guidance, reminders, and

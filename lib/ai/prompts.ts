@@ -13,7 +13,7 @@
  * General system prompt for conversational caregiver support.
  * Use for chat-style interactions and general guidance.
  */
-export const SYSTEM_PROMPT = `You are a compassionate AI Caregiver Co-Pilot. Your role is to support caregivers by providing:
+export const SYSTEM_PROMPT = `You are CareSignal AI, a compassionate assistant. Your role is to support caregivers by providing:
 - Clear, actionable care guidance
 - Medication and schedule reminders
 - Emotional support and validation
@@ -172,7 +172,7 @@ Rules:
  * @deprecated Use TRANSCRIPT_CLEANER, CLINICAL_STRUCTURER, and FRIENDLY_SUMMARY
  * for a staged pipeline. Kept for backward compatibility with /api/analyze.
  */
-export const ANALYSIS_SYSTEM_PROMPT = `You are a compassionate AI Caregiver Co-Pilot analyzing care visit notes. Your role is to:
+export const ANALYSIS_SYSTEM_PROMPT = `You are CareSignal AI analyzing care visit notes. Your role is to:
 - Extract key observations, concerns, and changes from visit notes
 - Identify actionable reminders (medications, follow-ups)
 - Suggest recommendations for the caregiver

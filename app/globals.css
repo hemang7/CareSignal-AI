@@ -42,6 +42,7 @@
 @layer base {
   html {
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
