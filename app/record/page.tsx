@@ -122,7 +122,7 @@ export default function RecordPage() {
           </h1>
           <p className="mt-3 text-base sm:text-lg text-muted max-w-lg mx-auto leading-relaxed">
             Record or paste caregiver observations —{" "}
-            <span className="text-primary font-medium">CareSignal AI</span> will
+            <span className="text-primary font-medium">CareGiver AI</span> will
             extract risks, trends, and clinical insights.
           </p>
           {activePatient && (
@@ -305,7 +305,7 @@ export default function RecordPage() {
                   {loadingMessage}
                 </span>
               ) : (
-                "Analyze with CareSignal AI"
+                "Analyze with CareGiver AI"
               )}
             </Button>
             <p className="text-sm text-muted">

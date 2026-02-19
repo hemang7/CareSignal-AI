@@ -166,7 +166,7 @@ export function MobileMenuPortal({
         {/* Header: branding + close button */}
         <div className="flex items-start justify-between gap-4 px-5 py-6 border-b border-border shrink-0">
           <div>
-            <p className="font-semibold text-foreground">CareSignal AI</p>
+            <p className="font-semibold text-foreground">CareGiver AI</p>
             <p className="text-sm text-muted mt-0.5">
               Smarter care insights in seconds.
             </p>

@@ -104,7 +104,7 @@ export default function Home() {
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 min-w-0 w-full overflow-x-hidden safe-mobile">
       {/* Hero */}
-      <section className="relative text-center pt-16 sm:pt-20 lg:pt-24 pb-20 sm:pb-24">
+      <section className="relative text-center pt-10 sm:pt-12 lg:pt-16 pb-16 sm:pb-20">
         <div
           className="absolute inset-0 pointer-events-none -z-10"
           style={{
@@ -124,7 +124,7 @@ export default function Home() {
           </p>
           <p className="mt-4 text-sm text-muted/90 max-w-xl mx-auto">
             Caregiver observations often contain life-critical signals that never
-            get structured. CareSignal AI makes them actionable.
+            get structured. CareGiver AI makes them actionable.
           </p>
         </div>
 
@@ -364,11 +364,11 @@ Monitor mobility with walker.`}
       {/* Why This Exists */}
       <section className="py-20 lg:py-28 bg-gradient-to-b from-transparent to-white/5 dark:to-white/[0.02]">
         <h2 className="text-2xl font-semibold text-foreground text-center mb-8">
-          Why CareSignal AI Exists
+          Why CareGiver AI Exists
         </h2>
         <p className="text-muted text-center max-w-2xl mx-auto leading-relaxed text-sm sm:text-base">
           Caregiver observations often contain critical health signals, but most
-          are lost in unstructured notes. CareSignal AI was built to transform
+          are lost in unstructured notes. CareGiver AI was built to transform
           those observations into structured, actionable intelligence that
           supports safer, faster care decisions.
         </p>

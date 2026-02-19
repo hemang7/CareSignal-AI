@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "CareSignal AI",
+  title: "CareGiver AI",
   description:
     "Compassionate AI assistance for caregivers. Get support with care tasks, reminders, and guidance.",
 };

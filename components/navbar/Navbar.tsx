@@ -17,7 +17,7 @@ export function Navbar() {
 
   return (
     <header
-      className="border-b border-border bg-card/80 backdrop-blur-sm sticky top-0 z-40"
+      className="border-b border-border bg-background backdrop-blur-sm sticky top-0 z-40"
       style={{ paddingTop: "env(safe-area-inset-top)" }}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 min-w-0">
@@ -27,7 +27,7 @@ export function Navbar() {
             href="/"
             className="text-sm sm:text-lg lg:text-xl font-semibold text-foreground hover:text-primary transition-colors shrink-0 min-w-0 truncate"
           >
-            CareSignal <span className="text-primary">AI</span>
+            CareGiver <span className="text-primary">AI</span>
           </Link>
 
           {/* Desktop (>=1024px): Full nav inline */}
